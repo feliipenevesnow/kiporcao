@@ -57,6 +57,15 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Check if welcome animation was already shown (for donation modal trigger)
+  useEffect(() => {
+    const hasShownAnimation = localStorage.getItem('welcomeAnimationShown') === 'true';
+    if (hasShownAnimation) {
+      // Animation was already shown, trigger modal timer immediately
+      setAnimationFinished(true);
+    }
+  }, []);
+
   // Donation modal timer - shows after animation and every 1 minute
   useEffect(() => {
     if (!animationFinished) return;
