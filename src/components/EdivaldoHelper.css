@@ -1,0 +1,185 @@
+.edivaldo-helper {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+.edivaldo-avatar-large {
+    width: 500px;
+    height: 500px;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 30px rgba(249, 115, 22, 0.5));
+    animation: slideUpFade 0.8s ease-out;
+}
+
+.edivaldo-speech-bubble-right {
+    position: absolute;
+    bottom: 520px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-card);
+    backdrop-filter: blur(16px);
+    border: var(--glass-border);
+    border-radius: 20px;
+    padding: 25px 30px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: var(--shadow-lg);
+    animation: popIn 0.5s ease-out 0.3s both;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Setinha apontando para BAIXO (cabeça do Edivaldo) */
+.edivaldo-speech-bubble-right::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-top: 16px solid rgba(30, 41, 59, 0.7);
+}
+
+.edivaldo-speech-bubble-right p {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: 1.15rem;
+    line-height: 1.6;
+    font-weight: 500;
+    text-align: center;
+}
+
+.typing-cursor {
+    animation: blink 1s step-end infinite;
+    color: var(--primary);
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+.edivaldo-close-btn {
+    margin-top: 20px;
+    padding: 10px 28px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+    font-family: var(--font-main);
+}
+
+.edivaldo-close-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(249, 115, 22, 0.6);
+    background: linear-gradient(135deg, #fb923c, var(--primary));
+}
+
+.edivaldo-close-btn:active {
+    transform: translateY(-1px);
+}
+
+/* Animação de entrada - Imagem sobe */
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animação de entrada - Balão aparece */
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+/* Animação de saída */
+.edivaldo-helper.fade-out .edivaldo-avatar-large {
+    animation: slideDownFade 0.8s ease-in forwards;
+}
+
+.edivaldo-helper.fade-out .edivaldo-speech-bubble-right {
+    animation: popOut 0.5s ease-in forwards;
+}
+
+@keyframes slideDownFade {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+}
+
+@keyframes popOut {
+    from {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(-50%) scale(0.5);
+    }
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .edivaldo-avatar-large {
+        width: 300px;
+        height: 300px;
+    }
+
+    .edivaldo-speech-bubble-right {
+        bottom: 300px;
+        max-width: 90%;
+        padding: 18px 22px;
+        font-size: 0.95rem;
+    }
+
+    .edivaldo-close-btn {
+        padding: 8px 20px;
+        font-size: 0.9rem;
+    }
+}
