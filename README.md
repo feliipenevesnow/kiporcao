@@ -1,73 +1,62 @@
-# React + TypeScript + Vite
+# 🍔 Ki Porção - Cardápio Digital Interativo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O **Ki Porção** é uma plataforma de cardápio online moderna, desenvolvida para proporcionar uma experiência de escolha rápida e intuitiva para os clientes. Diferente de cardápio em PDF, esta aplicação permite buscas em tempo real e filtragem por categorias.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📸 Demonstração
 
-## React Compiler
+<img width="1899" height="906" alt="image" src="https://github.com/user-attachments/assets/82a63e9c-7fd9-4d0e-9cfb-b643f101f39f" />
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+*Interface escura (Dark Mode) com foco na legibilidade e destaque visual para os produtos.*
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Tecnologias Utilizadas
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Este projeto foi migrado para um stack profissional para garantir escalabilidade e performance:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+* **React**: Biblioteca principal para construção da interface baseada em componentes.
+* **TypeScript**: Adição de tipagem estática para evitar erros em tempo de desenvolvimento e melhorar a manutenção.
+* **Vite**: Ferramenta de build de última geração para um desenvolvimento extremamente rápido (HMR).
+* **CSS Moderno**: Estilização focada em UX (User Experience) com tema dark e acentos em cores vibrantes.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## ✨ Funcionalidades Principais
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+* **🔍 Busca Inteligente**: Campo de pesquisa que filtra produtos por nome instantaneamente.
+* **📂 Categorização Dinâmica**: Filtros rápidos para Cervejas, Refrigerantes, Porções de Peixe, Variadas e Sashimi.
+* **📱 Totalmente Responsivo**: Adaptado para smartphones, facilitando o uso dentro do estabelecimento ou via delivery.
+* **⚡ Alta Performance**: Carregamento instantâneo graças à arquitetura do React + Vite.
+* **🛒 Interface Preparada para Pedidos**: Design que inclui botão de ação flutuante para interação futura com carrinho ou WhatsApp.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## 🛠️ Como rodar o projeto localmente
+
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/feliipenevesnow/kiporcao.git](https://github.com/feliipenevesnow/kiporcao.git)
+    ```
+2.  **Acesse a pasta:**
+    ```bash
+    cd kiporcao
+    ```
+3.  **Instale as dependências:**
+    ```bash
+    npm install
+    ```
+4.  **Inicie o servidor de desenvolvimento:**
+    ```bash
+    npm run dev
+    ```
+5.  Abra o navegador no endereço indicado (geralmente `http://localhost:5173`).
+
+---
+
+## 👨‍💻 Desenvolvedor
+
+**Felipe Neves**
+Desenvolvedor Full Stack
+📍 Presidente Epitácio - SP
